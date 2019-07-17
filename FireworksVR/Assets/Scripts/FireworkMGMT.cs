@@ -4,23 +4,18 @@ using UnityEngine;
 
 public class FireworkMGMT : MonoBehaviour
 {
-    public Vector2 gridSize;
-
     public GameObject fireworkPrefab;
+
+    public int fireworkCountMax = 10;
 
     public Transform spawnLocations;
     public List<Transform> spawnLocationList;
-
     public List<GameObject> ActiveFireworks;
-
-    public int fireworkCountMax = 6;
-    private int fireworkCount;
-
-    private float delayTime;
 
     public AnimationCurve curve;
 
-    public float timeTracker;
+    private float timeTracker;
+    private int fireworkCount;
 
     void Awake()
     {
@@ -42,14 +37,9 @@ public class FireworkMGMT : MonoBehaviour
                 ShootFirework(fireworkCount);
                 fireworkCount++;
             }
- 
         }
 
-
         //motion
-
-
-
         timeTracker += Time.deltaTime;
         for(int i = 0; i < ActiveFireworks.Count; i++)
         {
