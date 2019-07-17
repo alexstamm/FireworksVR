@@ -13,12 +13,15 @@ public class VRInput : MonoBehaviour
 
     //action ref
     public SteamVR_Action_Boolean WorldPull;
+    public SteamVR_Action_Boolean SlowTime;
 
     //hand ref
     public SteamVR_Input_Sources handType;
 
-    public bool isPullingWorld;
     public float pullSpeed = 50.0f;
+
+    private bool isPullingWorld;
+    private bool isSlowingTime;
 
     private Vector3 firstPoint;
     private Vector3 secondPoint;
@@ -26,8 +29,12 @@ public class VRInput : MonoBehaviour
     void Awake()
     {
         isPullingWorld = false;
+
         WorldPull.AddOnStateDownListener(TriggerDown, handType);
         WorldPull.AddOnStateUpListener(TriggerUp, handType);
+
+        SlowTime.AddOnStateDownListener(GripDown, handType);
+        SlowTime.AddOnStateUpListener(GripUp, handType);
     }
 
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -44,19 +51,51 @@ public class VRInput : MonoBehaviour
         firstPoint = handProxy.position;
     }
 
+    public void GripUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    {
+        Debug.Log("Grip Up");
+        isSlowingTime = false;
+    }
+
+    public void GripDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+    {
+        Debug.Log("Grip Down");
+        isSlowingTime = true;
+    }
+
+
     void Update()
     {
-        if (isPullingWorld)
-        {
-            SimplePull();
-        }
+        SimplePull();
+        SimpleSlowTime();     
     }
 
     private void SimplePull()
     {
-        secondPoint = handProxy.position;
-        Vector3 offset = secondPoint - firstPoint;
-        player.transform.Translate(-offset * Time.deltaTime * pullSpeed, Space.World);
+        if (isPullingWorld)
+        {
+            secondPoint = handProxy.position;
+            Vector3 offset = secondPoint - firstPoint;
+            player.transform.Translate(-offset * Time.deltaTime * pullSpeed, Space.World);
+        }
+    }
+
+    private void SimpleSlowTime()
+    {
+        if (isSlowingTime)
+        {
+            if (Time.timeScale == 1.0f)
+            {
+                Time.timeScale = 0.3f;
+            }
+        }
+        else
+        {
+            if(Time.timeScale != 1.0f)
+            {
+                Time.timeScale = 1.0f;
+            }
+        }
     }
 
 }
