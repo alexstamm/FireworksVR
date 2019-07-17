@@ -42,6 +42,7 @@ public class VRInput : MonoBehaviour
         Debug.Log("Trigger Up");
         isPullingWorld = false;
         firstPoint = Vector3.zero;
+        secondPoint = Vector3.zero;
     }
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
