@@ -24,5 +24,13 @@ namespace Valve.VR
                 return SteamVR_Actions.worldPullSet_WorldPull;
             }
         }
+        
+        public virtual SteamVR_Action_Boolean SlowTime
+        {
+            get
+            {
+                return SteamVR_Actions.worldPullSet_SlowTime;
+            }
+        }
     }
 }

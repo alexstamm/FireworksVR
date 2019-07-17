@@ -76,6 +76,10 @@
     {
       "name": "/actions/WorldPullSet/in/WorldPull",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/WorldPullSet/in/SlowTime",
+      "type": "boolean"
     }
   ],
   "action_sets": [
