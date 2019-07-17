@@ -1506,7 +1506,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":67.79349517822266,"g":37.62361526489258,"b":20.586505889892579,"a":1.0},"time":0.0},{"color":{"r":3.999999523162842,"g":3.07853364944458,"b":2.450261354446411,"a":1.0},"time":0.26214998960494997},{"color":{"r":1.6078431606292725,"g":1.0823529958724976,"b":1.003921627998352,"a":1.0},"time":0.5677729249000549},{"color":{"r":0.19607843458652497,"g":0.0470588244497776,"b":1.9607843160629273,"a":1.0},"time":0.9959258437156677}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":0.651728093624115},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":67.79349517822266,"g":21.959054946899415,"b":20.586505889892579,"a":1.0},"time":0.0},{"color":{"r":4.534228324890137,"g":4.534228324890137,"b":4.534228324890137,"a":1.0},"time":0.20000000298023225},{"color":{"r":0.19607843458652497,"g":0.0470588244497776,"b":1.9607843160629273,"a":1.0},"time":0.6323491334915161}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":0.651728093624115},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: gradient
@@ -5565,7 +5565,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 10
+      m_SerializableObject: 2
     m_Space: 2147483647
   m_Property:
     name: d
@@ -6297,7 +6297,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.ArcTorus, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"center":{"x":0.0,"y":1.0,"z":0.0},"majorRadius":0.20000000298023225,"minorRadius":0.05000000074505806,"arc":2.2891972064971926}'
+      m_SerializableObject: '{"center":{"x":0.0,"y":1.0,"z":0.0},"majorRadius":0.20000000298023225,"minorRadius":-0.03999999910593033,"arc":6.2831854820251469}'
     m_Space: 0
   m_Property:
     name: Torus
@@ -7346,7 +7346,7 @@ MonoBehaviour:
     x: -3075
     y: -233
     width: 7635
-    height: 3607
+    height: 3604
 --- !u!114 &114619461910804878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14881,9 +14881,9 @@ VisualEffectResource:
         - m_ExpressionIndex: 183
           m_Value: 0
         - m_ExpressionIndex: 185
-          m_Value: 2.2891972
+          m_Value: 6.2831855
         - m_ExpressionIndex: 186
-          m_Value: 0.05
+          m_Value: -0.04
         - m_ExpressionIndex: 187
           m_Value: 0.2
         - m_ExpressionIndex: 188
@@ -14891,7 +14891,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 189
           m_Value: 0
         - m_ExpressionIndex: 190
-          m_Value: 10
+          m_Value: 2
         - m_ExpressionIndex: 191
           m_Value: 1
         - m_ExpressionIndex: 193
@@ -15001,7 +15001,7 @@ VisualEffectResource:
         - m_ExpressionIndex: 155
           m_Value: 3
         - m_ExpressionIndex: 243
-          m_Value: 0
+          m_Value: 1
         - m_ExpressionIndex: 260
           m_Value: 4294967295
       m_Int:
@@ -15142,18 +15142,18 @@ VisualEffectResource:
         - m_ExpressionIndex: 239
           m_Value:
             serializedVersion: 2
-            key0: {r: 67.793495, g: 37.623615, b: 20.586506, a: 1}
-            key1: {r: 3.9999995, g: 3.0785336, b: 2.4502614, a: 1}
-            key2: {r: 1.6078432, g: 1.082353, b: 1.0039216, a: 0}
-            key3: {r: 0.19607843, g: 0.047058824, b: 1.9607843, a: 0}
+            key0: {r: 67.793495, g: 21.959055, b: 20.586506, a: 1}
+            key1: {r: 4.5342283, g: 4.5342283, b: 4.5342283, a: 1}
+            key2: {r: 0.19607843, g: 0.047058824, b: 1.9607843, a: 0}
+            key3: {r: 0, g: 0, b: 0, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
             key5: {r: 0, g: 0, b: 0, a: 0}
             key6: {r: 0, g: 0, b: 0, a: 0}
             key7: {r: 0, g: 0, b: 0, a: 0}
             ctime0: 0
-            ctime1: 17180
-            ctime2: 37209
-            ctime3: 65268
+            ctime1: 13107
+            ctime2: 41441
+            ctime3: 0
             ctime4: 0
             ctime5: 0
             ctime6: 0
@@ -15167,7 +15167,7 @@ VisualEffectResource:
             atime6: 0
             atime7: 0
             m_Mode: 0
-            m_NumColorKeys: 4
+            m_NumColorKeys: 3
             m_NumAlphaKeys: 3
       m_NamedObject:
         m_Array:
@@ -25956,7 +25956,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 
+      m_SerializableObject: 1
     m_Space: 2147483647
   m_Property:
     name: Seed
