@@ -43,7 +43,7 @@ public class FireworkMGMT : MonoBehaviour
         timeTracker += Time.deltaTime;
         for(int i = 0; i < ActiveFireworks.Count; i++)
         {
-            ActiveFireworks[i].transform.position = new Vector3(spawnLocationList[i].position.x, curve.Evaluate(timeTracker) * 20.0f, spawnLocationList[i].position.z);
+            ActiveFireworks[i].transform.position = new Vector3(spawnLocationList[i].position.x, curve.Evaluate(timeTracker) * 10.0f, spawnLocationList[i].position.z);
         }
 
         if(timeTracker > 3.0f)

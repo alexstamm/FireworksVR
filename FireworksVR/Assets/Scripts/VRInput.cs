@@ -18,7 +18,7 @@ public class VRInput : MonoBehaviour
     //hand ref
     public SteamVR_Input_Sources handType;
 
-    public float pullSpeed = 50.0f;
+    public float pullSpeed;
 
     private bool isPullingWorld;
     private bool isSlowingTime;
@@ -39,28 +39,26 @@ public class VRInput : MonoBehaviour
 
     public void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        Debug.Log("Trigger Up");
         isPullingWorld = false;
-        firstPoint = Vector3.zero;
-        secondPoint = Vector3.zero;
     }
 
     public void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        Debug.Log("Trigger is down");
-        isPullingWorld = true;
-        firstPoint = handProxy.position;
+        if (!isPullingWorld)
+        {
+            isPullingWorld = true;
+            firstPoint = handProxy.position;
+        }
+
     }
 
     public void GripUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        Debug.Log("Grip Up");
         isSlowingTime = false;
     }
 
     public void GripDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        Debug.Log("Grip Down");
         isSlowingTime = true;
     }
 
@@ -75,9 +73,9 @@ public class VRInput : MonoBehaviour
     {
         if (isPullingWorld)
         {
-            secondPoint = handProxy.position;
-            Vector3 offset = secondPoint - firstPoint;
-            player.transform.Translate(-offset * Time.deltaTime * pullSpeed, Space.World);
+            Vector3 offset = handProxy.position - firstPoint;
+            player.transform.position += (-offset * pullSpeed) * Time.deltaTime;
+            firstPoint = handProxy.position;
         }
     }
 
